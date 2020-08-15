@@ -1,0 +1,26 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+     Arrays.sort(nums);
+     
+    /** 
+    // If you don't want to use built-in function of sorting then use this below commented code for sorting. But this may cause Time limit error!
+        for(int i=0; i<nums.length; i++){
+            int minNum = i;
+            for(int j=i+1; j<nums.length; j++){
+                if(nums[minNum] < nums[j]){
+                    minNum = j;
+                }
+            }
+            int temp = nums[i];
+            nums[i] = nums[minNum];
+            nums[minNum] = temp;
+        }
+        **/
+       
+        for(int i=0;i<nums.length-1;i++){
+            if(nums[i]==nums[i+1])
+                return true;
+        }
+        return false;
+    }
+}
