@@ -1,0 +1,11 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+       int[] newArray = new int[2*n];
+        int x=0, y=n, z=0;
+        while(x<n){
+            newArray[z++] = nums[x++];
+            newArray[z++] = nums[y++];
+        }
+        return newArray;
+    }
+}
